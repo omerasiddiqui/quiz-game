@@ -1,0 +1,74 @@
+body {
+  background: black;
+  font-family: $body-font;
+}
+
+main {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.wrapper {
+  margin-top: 1%;
+  height: 100vh;
+  background: url(../assets/images/meseeks.png);
+  background-position: bottom right;
+  background-size: cover;
+  padding: 200px 100px;
+  align-self: center;
+  border-radius: 10px;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+h1 {
+  margin-top: -100px;
+  font-family: $heading-font;
+  font-size: 6rem;
+  color: $logo-primary;
+  text-shadow: 4px 4px 2px $logo-secondary;
+  font-weight: normal;
+}
+
+.testing {
+  display: none;
+  font-size: 2rem;
+  padding: 20px 10px 0;
+}
+
+button {
+  padding: 1% 2%;
+  font-size: 1.2rem;
+  background: black;
+  color: $rick-primary;
+  outline: $logo-primary;
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px black;
+  font-family: $body-font;
+  transition: 0.3s all;
+  &:hover {
+    background: lighten($logo-primary, 10);
+    color: white;
+    box-shadow: 2px 2px 2px black;
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.list {
+  width: 50%;
+  height: 60px;
+  display: none;
+  ul {
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    padding: 0;
+    list-style: none;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+}

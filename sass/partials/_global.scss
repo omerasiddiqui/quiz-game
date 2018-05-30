@@ -1,0 +1,24 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css?family=Creepster|Oswald');
+
+$heading-font: 'Creepster', cursive;
+$body-font: 'Oswald';
+$button-font: rickandmortyalt;
+$footer-font: adultswim;
+
+/* colors */
+$rick-primary: #B7E4F9;
+$rick-secondary: #82491E;
+$rick-alt: #917C5D;
+
+$morty-primary: #FAFD7C;
+$morty-secondary: #24325F;
+$morty-alt: #FB6467;
+
+$logo-primary: #17B2C5 ;
+$logo-secondary: #2BEA60;
+
+/* media breakpoints */
+$laptop : 1000px;
+$tablet : 800px;
+$mobile : 480px;
