@@ -1,4 +1,5 @@
 $(document).ready(function() {
+const MARVEL_API_KEY = '1b67f606425f993d3fd9691fb6b64c3c&hash=20b5040f9ed9facc2ec64ccfa55528a3';
 
   $('form').on("submit", function(e) {
     e.preventDefault();
@@ -6,9 +7,7 @@ $(document).ready(function() {
     $('input[type=text]').val('');
     if (search.length > 0) {
       console.log(search);
-
-      const key = '1b67f606425f993d3fd9691fb6b64c3c&hash=20b5040f9ed9facc2ec64ccfa55528a3';
-      $.getJSON(`https://gateway.marvel.com:443/v1/public/characters?name=${search}&ts=1&limit=20&apikey=${key}`)
+      $.getJSON(`https://gateway.marvel.com:443/v1/public/characters?name=${search}&ts=1&limit=20&apikey=${MARVEL_API_KEY}`)
         .done(function(res) {
           console.log(res);
           console.log(res.data);
@@ -43,13 +42,13 @@ $(document).ready(function() {
 
   //random character
   $('#btn2').click(function() {
-    function randomIntFromInterval(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    };
-    let int = randomIntFromInterval(1011334, 1009697);
-    console.log(int);
-    const key = '1b67f606425f993d3fd9691fb6b64c3c&hash=20b5040f9ed9facc2ec64ccfa55528a3';
-    $.getJSON(`https://gateway.marvel.com:443/v1/public/characters?id=${int}&ts=1&limit=20&apikey=${key}`)
+    let randomNumber = randomMarvelCharacterIndex();
+    console.log(randomNumber);
+    getMarvelCharaceter(randomNumber);
+  });
+
+  function getMarvelCharaceter(randomNumber) {
+    $.getJSON(`https://gateway.marvel.com:443/v1/public/characters?id=${randomNumber}&ts=1&limit=20&apikey=${MARVEL_API_KEY}`)
       .done(function(res) {
         console.log(res);
         console.log(res.data);
@@ -80,13 +79,16 @@ $(document).ready(function() {
         }
       })
       .fail(function() {
-        console.log('error!');
+        let randomNumber = randomMarvelCharacterIndex();
+        getMarvelCharaceter(randomNumber);
       })
-  });
+  }
 
-
-
-
+  function randomMarvelCharacterIndex() {
+    let min = 1011334;
+    let max = 1009697;
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   $('#btn').click(function() {
     $.getJSON('https://rickandmortyapi.com/api/character', function(res) {
@@ -111,7 +113,6 @@ $(document).ready(function() {
 
       console.log(`Your character's name is ${name} and ${genderDisp()} is a ${species}. Originally from ${location} and currently ${status}.`)
       $('ul').html(`<li>Your character's name is ${name} and ${genderDisp()} is a ${species}. Originally from ${location} and currently ${status}.</li>`);
-      // $('.image').css("display", "block");
       $('.image').attr('src', image);
       $('.list').css("opacity", "1");
       $('.list').fadeIn(250);
