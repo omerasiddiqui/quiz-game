@@ -16,7 +16,7 @@ main {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url(../assets/images/rorshach.jpg);
   background-position: 0px;
   background-size: cover;
-  padding: 200px 100px;
+  padding: 200px 50px;
   align-self: center;
   border-radius: 10px;
   border: 5px solid $primary-color;
@@ -73,14 +73,20 @@ button {
     &:nth-of-type(2):hover {
       background: red;
     }
+    &:last-child:hover {
+      background: $dc-primary;
+    }
   }
   &:active {
     box-shadow: none;
   }
 }
 
+
+
 .triggers {
   display: flex;
+  justify-content: center;
   form {
     display: flex;
     align-items: center;
@@ -96,12 +102,12 @@ button {
     z-index: 20;
   }
   input[type=submit] {
-    background: darken(dodgerblue, 10);
+    background: darken($dark, 20);
     color: white;
     margin-left: 2px;
     transition: 0.3s all;
     &:hover {
-      background: dodgerblue;
+      background: $dark;
     }
   }
   #btn2 {

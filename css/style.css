@@ -365,7 +365,7 @@ main {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url(../assets/images/rorshach.jpg);
   background-position: 0px;
   background-size: cover;
-  padding: 200px 100px;
+  padding: 200px 50px;
   align-self: center;
   border-radius: 10px;
   border: 5px solid #ffff1a;
@@ -413,11 +413,14 @@ button {
     box-shadow: 2px 2px 2px black; }
     button:hover:nth-of-type(2):hover {
       background: red; }
+    button:hover:last-child:hover {
+      background: #012AB7; }
   button:active {
     box-shadow: none; }
 
 .triggers {
-  display: flex; }
+  display: flex;
+  justify-content: center; }
   .triggers form {
     display: flex;
     align-items: center;
@@ -431,12 +434,12 @@ button {
     font-family: "Oswald";
     z-index: 20; }
   .triggers input[type=submit] {
-    background: #0077ea;
+    background: black;
     color: white;
     margin-left: 2px;
     transition: 0.3s all; }
     .triggers input[type=submit]:hover {
-      background: dodgerblue; }
+      background: #191919; }
   .triggers #btn2 {
     padding: 3% 6%;
     width: 50%; }
