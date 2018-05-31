@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Creepster|Oswald");
+@import url("https://fonts.googleapis.com/css?family=Creepster|Bungee|Oswald");
 button, hr, input {
   overflow: visible; }
 
@@ -359,24 +359,36 @@ main {
   /* align-items: center; */ }
 
 .wrapper {
-  margin-top: 1%;
-  height: 100vh;
-  background: url(../assets/images/meseeks.png);
-  background-position: bottom right;
+  margin-top: 0.25%;
+  min-height: 99vh;
+  /* max-height: 120vh; */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url(../assets/images/rorshach.jpg);
+  background-position: 0px;
   background-size: cover;
   padding: 200px 100px;
   align-self: center;
-  border-radius: 10px; }
+  border-radius: 10px;
+  border: 5px solid #ffff1a;
+  transition: 8s linear all; }
+  .wrapper:hover {
+    background-position: -1000px; }
 
 .image {
   border-radius: 10px; }
 
+#fetch {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
 h1 {
-  margin-top: -100px;
-  font-family: "Creepster", cursive;
-  font-size: 6rem;
-  color: #17B2C5;
-  text-shadow: 4px 4px 2px #2BEA60;
+  margin-top: -120px;
+  margin-bottom: 10px;
+  font-family: "Bungee", cursive;
+  font-size: 5rem;
+  color: #ffff1a;
+  text-shadow: 6px 6px 2px black;
   font-weight: normal; }
 
 .testing {
@@ -387,6 +399,7 @@ h1 {
 button {
   padding: 1% 2%;
   font-size: 1.2rem;
+  margin-right: 5%;
   background: black;
   color: #B7E4F9;
   outline: #17B2C5;
@@ -398,17 +411,71 @@ button {
     background: #29d1e6;
     color: white;
     box-shadow: 2px 2px 2px black; }
+    button:hover:nth-of-type(2):hover {
+      background: red; }
   button:active {
     box-shadow: none; }
 
-.list {
-  width: 50%;
-  height: 60px;
-  display: none; }
-  .list ul {
+.triggers {
+  display: flex; }
+  .triggers form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .triggers input[type=text], .triggers input[type=submit] {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-family: "Oswald";
+    z-index: 20; }
+  .triggers input[type=submit] {
+    background: #0077ea;
     color: white;
+    margin-left: 2px;
+    transition: 0.3s all; }
+    .triggers input[type=submit]:hover {
+      background: dodgerblue; }
+  .triggers #btn2 {
+    padding: 3% 6%;
+    width: 50%; }
+    .triggers #btn2:hover {
+      background: red; }
+
+.form {
+  display: inline-block; }
+
+.moreInfo #fmi {
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 2px;
+  border-bottom: red; }
+  .moreInfo #fmi h2 {
+    margin: 10px 0; }
+
+.moreInfo a {
+  text-decoration: none;
+  color: #ffff1a;
+  text-shadow: 2px 2px 2px black;
+  font-size: 3.2rem; }
+  .moreInfo a h2 {
+    margin: 10px 0; }
+
+.list {
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  opacity: 0; }
+  .list ul {
+    width: 50%;
+    color: white;
+    background: rgba(0, 0, 0, 0.501);
     text-shadow: 1px 1px 0 black;
-    padding: 0;
+    padding: 25px;
     list-style: none;
     font-size: 2rem;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    border-radius: 10px; }

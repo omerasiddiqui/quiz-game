@@ -1,7 +1,7 @@
 /* fonts */
-@import url('https://fonts.googleapis.com/css?family=Creepster|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Creepster|Bungee|Oswald');
 
-$heading-font: 'Creepster', cursive;
+$heading-font: 'Bungee', cursive;
 $body-font: 'Oswald';
 $button-font: rickandmortyalt;
 $footer-font: adultswim;
@@ -22,3 +22,8 @@ $logo-secondary: #2BEA60;
 $laptop : 1000px;
 $tablet : 800px;
 $mobile : 480px;
+
+$primary-color: #ffff1a;
+$secondary-color: #17B2C5;
+$dark: #191919;
+$white: #fff;
