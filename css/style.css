@@ -406,15 +406,17 @@ button {
   border-radius: 10px;
   box-shadow: 3px 3px 2px black;
   font-family: "Oswald";
-  transition: 0.3s all; }
+  transition: 0.3s all;
+  text-transform: uppercase; }
   button:hover {
-    background: #29d1e6;
+    flex-grow: 0.5;
+    box-shadow: 2px 2px 2px black;
     color: white;
-    box-shadow: 2px 2px 2px black; }
-    button:hover:nth-of-type(2):hover {
-      background: red; }
-    button:hover:last-child:hover {
-      background: #012AB7; }
+    font-size: 1.8rem;
+    background: #29d1e6;
+    color: white; }
+  button:last-child:hover {
+    background: #FF509F; }
   button:active {
     box-shadow: none; }
 
@@ -444,7 +446,8 @@ button {
     padding: 3% 6%;
     width: 50%; }
     .triggers #btn2:hover {
-      background: red; }
+      background: red;
+      color: white; }
 
 .form {
   display: inline-block; }

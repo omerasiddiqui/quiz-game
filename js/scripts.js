@@ -123,12 +123,21 @@ const COMIC_API_KEY = '576c6d73e8839e8e061dc63a19396156e4a60680';
   });
 
     $('#dc').click(function() {
-      $.ajax({
-        method: "GET",
-        url: "`https://www.comicvine.com/api/characters?api_key=${COMIC_API_KEY}&format=json&callback=?`",
-        dataType: "jsonp"
-      })
-    .done(function() {
+      $.getJSON(`https://thesimpsonsquoteapi.glitch.me/quotes`)
+    .done(function(data) {
+      const character = data[0].character;
+      const quote = data[0].quote;
+      const image = data[0].image;
+
+      $('ul').html(`<li>A quote from ${character}: ${quote}</li>`);
+      $('.image').attr('src', image);
+      $('.list').css("opacity", "1");
+      $('.list').fadeIn(250);
+
+
+
+      console.log(data);
+      console.log(character)
       console.log('success!');
     })
     .fail(function() {

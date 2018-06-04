@@ -66,16 +66,17 @@ button {
   box-shadow: 3px 3px 2px black;
   font-family: $body-font;
   transition: 0.3s all;
+  text-transform: uppercase;
   &:hover {
+    flex-grow: 0.5;
+    box-shadow: 2px 2px 2px black;
+    color: white;
+    font-size: 1.8rem;
     background: lighten($logo-primary, 10);
     color: white;
-    box-shadow: 2px 2px 2px black;
-    &:nth-of-type(2):hover {
-      background: red;
-    }
-    &:last-child:hover {
-      background: $dc-primary;
-    }
+  }
+  &:last-child:hover {
+    background: #FF509F;
   }
   &:active {
     box-shadow: none;
@@ -115,6 +116,7 @@ button {
     width: 50%;
     &:hover {
       background: red;
+      color: white;
     }
   }
 }
