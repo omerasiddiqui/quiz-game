@@ -1,5 +1,6 @@
 $(document).ready(function() {
 const MARVEL_API_KEY = '1b67f606425f993d3fd9691fb6b64c3c&hash=20b5040f9ed9facc2ec64ccfa55528a3';
+const COMIC_API_KEY = '576c6d73e8839e8e061dc63a19396156e4a60680';
 
   $('form').on("submit", function(e) {
     e.preventDefault();
@@ -120,4 +121,55 @@ const MARVEL_API_KEY = '1b67f606425f993d3fd9691fb6b64c3c&hash=20b5040f9ed9facc2e
       console.log(randomNum);
     });
   });
+
+    $('#dc').click(function() {
+      $.ajax({
+        method: "GET",
+        url: "`https://www.comicvine.com/api/characters?api_key=${COMIC_API_KEY}&format=json&callback=?`",
+        dataType: "jsonp"
+      })
+    .done(function() {
+      console.log('success!');
+    })
+    .fail(function() {
+      console.log(`error!`);
+    })
+
+    });
+
+
+  // $('#dc').click(function() {
+  //   $.getJSON(`https://www.comicvine.com/api/characters?api_key=${COMIC_API_KEY}&format=json`, function(res) {
+  //     console.log(res);
+
+    //   const randomNum = Math.floor(Math.random() * 20);
+    //   const int = randomNum;
+    //   const data = res.results[int];
+    //   const gender = data.gender;
+    //   const name = data.name;
+    //   const species = data.species;
+    //   const location = data.location.name;
+    //   const status = data.status;
+    //   const image = data.image;
+    //
+    //   function genderDisp() {
+    //     if (gender == "Male") {
+    //       return "he";
+    //     } else {
+    //       return "she"
+    //     }
+    //   }
+    //
+    //   console.log(`Your character's name is ${name} and ${genderDisp()} is a ${species}. Originally from ${location} and currently ${status}.`)
+    //   $('ul').html(`<li>Your character's name is ${name} and ${genderDisp()} is a ${species}. Originally from ${location} and currently ${status}.</li>`);
+    //   $('.image').attr('src', image);
+    //   $('.list').css("opacity", "1");
+    //   $('.list').fadeIn(250);
+    //
+    //   console.log(randomNum);
+
+
+
+
+
 });
