@@ -360,15 +360,12 @@ main {
   margin-top: 0.25%;
   min-height: 105vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)), url("../assets/images/rorshach.jpg");
-  background-position: 0;
+  background-position: center center;
   background-size: cover;
   padding: 200px 50px;
   align-self: center;
   border-radius: 10px;
-  border: 5px solid #ffff1a;
-  transition: 8s linear all; }
-  .wrapper:hover {
-    background-position: -1000px; }
+  border: 5px solid #ffff1a; }
 
 .image {
   border-radius: 10px; }
